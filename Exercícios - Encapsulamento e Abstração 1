@@ -1,0 +1,37 @@
+public class CalculadoraDeArea {
+
+    
+    public double calcularArea(double lado) {
+        return lado * lado;
+    }
+
+    
+    public double calcularArea(double largura, double altura) {
+        return largura * altura;
+    }
+
+   
+    public double calcularArea(double raio, boolean isCirculo) {
+        if (isCirculo) {
+            return Math.PI * raio * raio;
+        } else {
+            throw new IllegalArgumentException("O terceiro parâmetro deve ser verdadeiro para calcular a área de um círculo.");
+        }
+    }
+
+    public static void main(String[] args) {
+        CalculadoraDeArea calc = new CalculadoraDeArea();
+
+        // Testando o cálculo da área do quadrado
+        double areaQuadrado = calc.calcularArea(4.0);
+        System.out.println("Área do quadrado: " + areaQuadrado);
+
+        // Testando o cálculo da área do retângulo
+        double areaRetangulo = calc.calcularArea(5.0, 3.0);
+        System.out.println("Área do retângulo: " + areaRetangulo);
+
+        // Testando o cálculo da área do círculo
+        double areaCirculo = calc.calcularArea(7.0, true);
+        System.out.println("Área do círculo: " + areaCirculo);
+    }
+}
